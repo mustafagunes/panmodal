@@ -70,22 +70,12 @@ private extension SampleViewController {
         case basic
         case table
         case navController
-        case fullScreen
-        case alert
-        case transientAlert
-        case userGroups
-        case stacked
 
         var presentable: RowPresentable {
             switch self {
             case .basic: return Basic()
             case .table: return Table()
             case .navController: return Navigation()
-            case .fullScreen: return FullScreen()
-            case .alert: return Alert()
-            case .transientAlert: return TransientAlert()
-            case .userGroups: return UserGroup()
-            case .stacked: return Stacked()
             }
         }
 
@@ -99,34 +89,9 @@ private extension SampleViewController {
             let rowVC: PanModalPresentable.LayoutType = TableViewController()
         }
 
-        struct FullScreen: RowPresentable {
-            let string: String = "Full Screen"
-            let rowVC: PanModalPresentable.LayoutType = FullScreenNavController()
-        }
-
-        struct Alert: RowPresentable {
-            let string: String = "Alert"
-            let rowVC: PanModalPresentable.LayoutType = AlertViewController()
-        }
-
-        struct TransientAlert: RowPresentable {
-            let string: String = "Alert (Transient)"
-            let rowVC: PanModalPresentable.LayoutType = TransientAlertViewController()
-        }
-
-        struct UserGroup: RowPresentable {
-            let string: String = "User Groups"
-            let rowVC: PanModalPresentable.LayoutType = UserGroupViewController()
-        }
-
         struct Navigation: RowPresentable {
             let string: String = "NavigationController"
             let rowVC: PanModalPresentable.LayoutType = NavigationController()
-        }
-
-        struct Stacked: RowPresentable {
-            let string: String = "User Groups (Stacked)"
-            let rowVC: PanModalPresentable.LayoutType = UserGroupStackedViewController()
         }
     }
 }

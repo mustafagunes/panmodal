@@ -41,10 +41,6 @@ extension FullScreenNavController: PanModalPresentable {
     var shouldRoundTopCorners: Bool {
         return false
     }
-
-    var showDragIndicator: Bool {
-        return false
-    }
     
     var showCloseButton: Bool {
         return true
