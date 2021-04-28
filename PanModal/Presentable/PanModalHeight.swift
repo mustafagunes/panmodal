@@ -40,5 +40,10 @@ public enum PanModalHeight: Equatable {
      Sets the height to be the intrinsic content height
      */
     case intrinsicHeight
+    
+    /**
+     Sets the height to be the intrinsic content height
+     */
+    case intrinsicHeightWithInsets(insets: UIEdgeInsets)
 }
 #endif

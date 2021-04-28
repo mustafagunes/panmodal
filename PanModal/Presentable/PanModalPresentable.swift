@@ -172,6 +172,20 @@ public protocol PanModalPresentable: AnyObject {
      Default value is true.
      */
     var showDragIndicator: Bool { get }
+    
+    /**
+     A flag held to adjust the visibility of the close button.
+     
+     Default value is true.
+     */
+    var showCloseButton: Bool { get }
+    
+    /**
+     The indicator background color.
+
+     Default value is clearColor.
+    */
+    var indicatorBackgroundColor: UIColor { get }
 
     /**
      Asks the delegate if the pan modal should respond to the pan modal gesture recognizer.

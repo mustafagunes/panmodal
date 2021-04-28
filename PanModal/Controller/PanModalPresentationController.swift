@@ -40,6 +40,7 @@ open class PanModalPresentationController: UIPresentationController {
         static let indicatorYOffset = CGFloat(8.0)
         static let snapMovementSensitivity = CGFloat(0.7)
         static let dragIndicatorSize = CGSize(width: 36.0, height: 5.0)
+        static let indicatorContentHeight = CGFloat(26.0)
     }
 
     // MARK: - Properties
@@ -137,6 +138,20 @@ open class PanModalPresentationController: UIPresentationController {
         view.backgroundColor = presentable?.dragIndicatorBackgroundColor
         view.layer.cornerRadius = Constants.dragIndicatorSize.height / 2.0
         return view
+    }()
+    
+    private lazy var dragIndicatorContentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = presentable?.indicatorBackgroundColor
+        return view
+    }()
+    
+    private var closeButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("X", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .clear
+        return button
     }()
 
     /**
@@ -236,12 +251,8 @@ open class PanModalPresentationController: UIPresentationController {
                 else { return }
 
             self.adjustPresentedViewFrame()
-            if presentable.shouldRoundTopCorners {
-                self.addRoundedCorners(to: self.presentedView)
-            }
         })
     }
-
 }
 
 // MARK: - Public Methods
@@ -252,7 +263,7 @@ public extension PanModalPresentationController {
      Transition the PanModalPresentationController
      to the given presentation state
      */
-    func transition(to state: PresentationState) {
+    func transition(to state: PresentationState, animated: Bool = true) {
 
         guard presentable?.shouldTransition(to: state) == true
             else { return }
@@ -261,9 +272,9 @@ public extension PanModalPresentationController {
 
         switch state {
         case .shortForm:
-            snap(toYPosition: shortFormYPosition)
+            snap(toYPosition: shortFormYPosition, animated: animated)
         case .longForm:
-            snap(toYPosition: longFormYPosition)
+            snap(toYPosition: longFormYPosition, animated: animated)
         }
     }
 
@@ -348,11 +359,12 @@ private extension PanModalPresentationController {
         containerView.addGestureRecognizer(panGestureRecognizer)
 
         if presentable.showDragIndicator {
-            addDragIndicatorView(to: presentedView)
+            addDragIndicatorContentView(to: presentedView)
+            addDragIndicatorView(to: dragIndicatorContentView)
         }
-
-        if presentable.shouldRoundTopCorners {
-            addRoundedCorners(to: presentedView)
+        
+        if presentable.showCloseButton {
+            addCloseButton(to: presentedView)
         }
 
         setNeedsLayoutUpdate()
@@ -411,10 +423,36 @@ private extension PanModalPresentationController {
     func addDragIndicatorView(to view: UIView) {
         view.addSubview(dragIndicatorView)
         dragIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        dragIndicatorView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: -Constants.indicatorYOffset).isActive = true
         dragIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        dragIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         dragIndicatorView.widthAnchor.constraint(equalToConstant: Constants.dragIndicatorSize.width).isActive = true
         dragIndicatorView.heightAnchor.constraint(equalToConstant: Constants.dragIndicatorSize.height).isActive = true
+    }
+    
+    /**
+     Adds the drag indicator content view to the view hierarchy
+     & configures its layout constraints.
+     */
+    func addDragIndicatorContentView(to view: UIView) {
+        view.addSubview(dragIndicatorContentView)
+        dragIndicatorContentView.translatesAutoresizingMaskIntoConstraints = false
+        dragIndicatorContentView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 1.0).isActive = true
+        dragIndicatorContentView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        dragIndicatorContentView.widthAnchor.constraint(equalTo: presentedView.widthAnchor).isActive = true
+        dragIndicatorContentView.heightAnchor.constraint(equalToConstant: Constants.indicatorContentHeight).isActive = true
+        dragIndicatorContentView.roundCorners(corners: [.topLeft,.topRight], radius: 16.0)
+    }
+    
+    func addCloseButton(to view: UIView) {
+        view.addSubview(closeButton)
+        view.bringSubviewToFront(closeButton)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 1.0).isActive = true
+        closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        closeButton.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
+        closeButton.roundCorners(corners: [.allCorners], radius: 11)
     }
 
     /**
@@ -639,12 +677,16 @@ private extension PanModalPresentationController {
         return (abs(velocity) - (1000 * (1 - Constants.snapMovementSensitivity))) > 0
     }
 
-    func snap(toYPosition yPos: CGFloat) {
-        PanModalAnimator.animate({ [weak self] in
-            self?.adjust(toYPosition: yPos)
-            self?.isPresentedViewAnimating = true
-        }, config: presentable) { [weak self] didComplete in
-            self?.isPresentedViewAnimating = !didComplete
+    func snap(toYPosition yPos: CGFloat, animated: Bool = true) {
+        if animated {
+            PanModalAnimator.animate({ [weak self] in
+                self?.adjust(toYPosition: yPos)
+                self?.isPresentedViewAnimating = true
+            }, config: presentable) { [weak self] didComplete in
+                self?.isPresentedViewAnimating = !didComplete
+            }
+        } else {
+            self.adjust(toYPosition: yPos)
         }
     }
 
@@ -679,6 +721,14 @@ private extension PanModalPresentationController {
         guard let nearestVal = values.min(by: { abs(number - $0) < abs(number - $1) })
             else { return number }
         return nearestVal
+    }
+    
+    /**
+     Allows the current controller to be turned off.
+     */
+    @objc func closeButtonAction(sender: UIButton) {
+        print("‼️ Dismissed Controller...")
+        presentedViewController.dismiss(animated: true)
     }
 }
 
@@ -837,50 +887,22 @@ extension PanModalPresentationController: UIGestureRecognizerDelegate {
 private extension PanModalPresentationController {
 
     /**
-     Draws top rounded corners on a given view
-     We have to set a custom path for corner rounding
-     because we render the dragIndicator outside of view bounds
-     */
-    func addRoundedCorners(to view: UIView) {
-        let radius = presentable?.cornerRadius ?? 0
-        let path = UIBezierPath(roundedRect: view.bounds,
-                                byRoundingCorners: [.topLeft, .topRight],
-                                cornerRadii: CGSize(width: radius, height: radius))
-
-        // Draw around the drag indicator view, if displayed
-        if presentable?.showDragIndicator == true {
-            let indicatorLeftEdgeXPos = view.bounds.width/2.0 - Constants.dragIndicatorSize.width/2.0
-            drawAroundDragIndicator(currentPath: path, indicatorLeftEdgeXPos: indicatorLeftEdgeXPos)
-        }
-
-        // Set path as a mask to display optional drag indicator view & rounded corners
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        view.layer.mask = mask
-
-        // Improve performance by rasterizing the layer
-        view.layer.shouldRasterize = true
-        view.layer.rasterizationScale = UIScreen.main.scale
-    }
-
-    /**
      Draws a path around the drag indicator view
      */
     func drawAroundDragIndicator(currentPath path: UIBezierPath, indicatorLeftEdgeXPos: CGFloat) {
 
-        let totalIndicatorOffset = Constants.indicatorYOffset + Constants.dragIndicatorSize.height
+        let totalIndicatorOffset = Constants.indicatorYOffset + CGFloat(15.0)
 
         // Draw around drag indicator starting from the left
         path.addLine(to: CGPoint(x: indicatorLeftEdgeXPos, y: path.currentPoint.y))
         path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y - totalIndicatorOffset))
-        path.addLine(to: CGPoint(x: path.currentPoint.x + Constants.dragIndicatorSize.width, y: path.currentPoint.y))
+        path.addLine(to: CGPoint(x: path.currentPoint.x + CGFloat(200), y: path.currentPoint.y))
         path.addLine(to: CGPoint(x: path.currentPoint.x, y: path.currentPoint.y + totalIndicatorOffset))
     }
 }
 
 // MARK: - Helper Extensions
-
-private extension UIScrollView {
+fileprivate extension UIScrollView {
 
     /**
      A flag to determine if a scroll view is scrolling
@@ -889,4 +911,38 @@ private extension UIScrollView {
         return isDragging && !isDecelerating || isTracking
     }
 }
+
+fileprivate extension UIView {
+
+    /**
+     Sets the edge roundness of views.
+     */
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        if #available(iOS 11, *) {
+            var masked = CACornerMask()
+
+            self.clipsToBounds = true
+            self.layer.cornerRadius = radius
+
+            if corners.contains(.topLeft) { masked.insert(.layerMinXMinYCorner) }
+            if corners.contains(.topRight) { masked.insert(.layerMaxXMinYCorner) }
+            if corners.contains(.bottomLeft) { masked.insert(.layerMinXMaxYCorner) }
+            if corners.contains(.bottomRight) { masked.insert(.layerMaxXMaxYCorner) }
+
+            self.layer.maskedCorners = masked
+        } else {
+            let cornerRadius = CGSize(width: radius, height: radius)
+            let path = UIBezierPath(
+                roundedRect: bounds,
+                byRoundingCorners: corners,
+                cornerRadii: cornerRadius
+            )
+            let mask = CAShapeLayer()
+
+            mask.path = path.cgPath
+            layer.mask = mask
+        }
+    }
+}
+
 #endif

@@ -10,7 +10,7 @@ import UIKit
 
 class NavigationController: UINavigationController, PanModalPresentable {
 
-    private let navGroups = NavUserGroups()
+    private let navGroups = TableViewController()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -39,7 +39,7 @@ class NavigationController: UINavigationController, PanModalPresentable {
     // MARK: - Pan Modal Presentable
 
     var panScrollable: UIScrollView? {
-        return (topViewController as? PanModalPresentable)?.panScrollable
+        return nil//(topViewController as? PanModalPresentable)?.panScrollable
     }
 
     var longFormHeight: PanModalHeight {
@@ -48,6 +48,10 @@ class NavigationController: UINavigationController, PanModalPresentable {
 
     var shortFormHeight: PanModalHeight {
         return longFormHeight
+    }
+    
+    var indicatorBackgroundColor: UIColor {
+        return (topViewController as? PanModalPresentable)?.panScrollable?.backgroundColor ?? .white
     }
 }
 

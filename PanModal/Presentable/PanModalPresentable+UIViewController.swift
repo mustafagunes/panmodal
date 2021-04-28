@@ -26,8 +26,8 @@ public extension PanModalPresentable where Self: UIViewController {
      A function wrapper over the `transition(to state: PanModalPresentationController.PresentationState)`
      function in the PanModalPresentationController.
      */
-    func panModalTransition(to state: PanModalPresentationController.PresentationState) {
-        presentedVC?.transition(to: state)
+    func panModalTransition(to state: PanModalPresentationController.PresentationState, animated: Bool) {
+        presentedVC?.transition(to: state, animated: animated)
     }
 
     /**
@@ -38,6 +38,14 @@ public extension PanModalPresentable where Self: UIViewController {
      */
     func panModalSetNeedsLayoutUpdate() {
         presentedVC?.setNeedsLayoutUpdate()
+    }
+    
+    func panModalSetNeedsLayoutUpdateWithTransition(
+        to state: PanModalPresentationController.PresentationState,
+        animated: Bool
+    ) {
+        presentedVC?.setNeedsLayoutUpdate()
+        panModalTransition(to: state, animated: animated)
     }
 
     /**

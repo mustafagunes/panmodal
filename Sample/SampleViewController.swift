@@ -53,6 +53,7 @@ class SampleViewController: UITableViewController {
         guard let rowType = RowType(rawValue: indexPath.row) else {
             return
         }
+        
         dismiss(animated: true, completion: nil)
         presentPanModal(rowType.presentable.rowVC)
     }
@@ -67,29 +68,35 @@ private extension SampleViewController {
 
     enum RowType: Int, CaseIterable {
         case basic
+        case table
+        case navController
         case fullScreen
         case alert
         case transientAlert
         case userGroups
         case stacked
-        case navController
-
 
         var presentable: RowPresentable {
             switch self {
             case .basic: return Basic()
+            case .table: return Table()
+            case .navController: return Navigation()
             case .fullScreen: return FullScreen()
             case .alert: return Alert()
             case .transientAlert: return TransientAlert()
             case .userGroups: return UserGroup()
             case .stacked: return Stacked()
-            case .navController: return Navigation()
             }
         }
 
         struct Basic: RowPresentable {
             let string: String = "Basic"
             let rowVC: PanModalPresentable.LayoutType = BasicViewController()
+        }
+        
+        struct Table: RowPresentable {
+            let string: String = "Table"
+            let rowVC: PanModalPresentable.LayoutType = TableViewController()
         }
 
         struct FullScreen: RowPresentable {
@@ -113,7 +120,7 @@ private extension SampleViewController {
         }
 
         struct Navigation: RowPresentable {
-            let string: String = "User Groups (NavigationController)"
+            let string: String = "NavigationController"
             let rowVC: PanModalPresentable.LayoutType = NavigationController()
         }
 
