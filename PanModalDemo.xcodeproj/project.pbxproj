@@ -10,19 +10,19 @@
 		0F2A2C552239C119003BDB2F /* PanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F2A2C532239C119003BDB2F /* PanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F2A2C582239C119003BDB2F /* PanModal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F2A2C512239C119003BDB2F /* PanModal.framework */; };
 		0F2A2C592239C119003BDB2F /* PanModal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F2A2C512239C119003BDB2F /* PanModal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2ED1ECB5263999C10098FE48 /* PanModalPresentable+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECA2263999C10098FE48 /* PanModalPresentable+Defaults.swift */; };
-		2ED1ECB6263999C10098FE48 /* PanModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECA3263999C10098FE48 /* PanModalPresentable.swift */; };
-		2ED1ECB7263999C10098FE48 /* PanModalPresentable+LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECA4263999C10098FE48 /* PanModalPresentable+LayoutHelpers.swift */; };
-		2ED1ECB8263999C10098FE48 /* PanModalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECA5263999C10098FE48 /* PanModalHeight.swift */; };
-		2ED1ECB9263999C10098FE48 /* PanModalPresentable+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECA6263999C10098FE48 /* PanModalPresentable+UIViewController.swift */; };
-		2ED1ECBA263999C10098FE48 /* UIViewController+PanModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECA9263999C10098FE48 /* UIViewController+PanModalPresenter.swift */; };
-		2ED1ECBB263999C10098FE48 /* PanModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECAA263999C10098FE48 /* PanModalPresenter.swift */; };
-		2ED1ECBC263999C10098FE48 /* PanModalPresentationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECAC263999C10098FE48 /* PanModalPresentationDelegate.swift */; };
-		2ED1ECBD263999C10098FE48 /* PanModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECAE263999C10098FE48 /* PanModalAnimator.swift */; };
-		2ED1ECBE263999C10098FE48 /* PanModalPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECAF263999C10098FE48 /* PanModalPresentationAnimator.swift */; };
-		2ED1ECBF263999C10098FE48 /* PanModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECB1263999C10098FE48 /* PanModalPresentationController.swift */; };
-		2ED1ECC0263999C10098FE48 /* PanContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECB3263999C10098FE48 /* PanContainerView.swift */; };
-		2ED1ECC1263999C10098FE48 /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED1ECB4263999C10098FE48 /* DimmedView.swift */; };
+		2E088FB32639AC2900DF7023 /* PanModalPresentable+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088F9C2639AC2900DF7023 /* PanModalPresentable+Defaults.swift */; };
+		2E088FB42639AC2900DF7023 /* PanModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088F9D2639AC2900DF7023 /* PanModalPresentable.swift */; };
+		2E088FB52639AC2900DF7023 /* PanModalPresentable+LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088F9E2639AC2900DF7023 /* PanModalPresentable+LayoutHelpers.swift */; };
+		2E088FB62639AC2900DF7023 /* PanModalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088F9F2639AC2900DF7023 /* PanModalHeight.swift */; };
+		2E088FB72639AC2900DF7023 /* PanModalPresentable+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088FA02639AC2900DF7023 /* PanModalPresentable+UIViewController.swift */; };
+		2E088FB82639AC2900DF7023 /* UIViewController+PanModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088FA72639AC2900DF7023 /* UIViewController+PanModalPresenter.swift */; };
+		2E088FB92639AC2900DF7023 /* PanModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088FA82639AC2900DF7023 /* PanModalPresenter.swift */; };
+		2E088FBA2639AC2900DF7023 /* PanModalPresentationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088FAA2639AC2900DF7023 /* PanModalPresentationDelegate.swift */; };
+		2E088FBB2639AC2900DF7023 /* PanModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088FAC2639AC2900DF7023 /* PanModalAnimator.swift */; };
+		2E088FBC2639AC2900DF7023 /* PanModalPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088FAD2639AC2900DF7023 /* PanModalPresentationAnimator.swift */; };
+		2E088FBD2639AC2900DF7023 /* PanModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088FAF2639AC2900DF7023 /* PanModalPresentationController.swift */; };
+		2E088FBE2639AC2900DF7023 /* PanContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088FB12639AC2900DF7023 /* PanContainerView.swift */; };
+		2E088FBF2639AC2900DF7023 /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088FB22639AC2900DF7023 /* DimmedView.swift */; };
 		2EF02B8C263586C5009EF2A4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF02B8B263586C5009EF2A4 /* TableViewController.swift */; };
 		743CABB02225FC9F00634A5A /* UserGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743CABAF2225FC9F00634A5A /* UserGroupViewController.swift */; };
 		743CABB22225FD1100634A5A /* UserGroupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743CABB12225FD1100634A5A /* UserGroupHeaderView.swift */; };
@@ -81,20 +81,21 @@
 		0F2A2C512239C119003BDB2F /* PanModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F2A2C532239C119003BDB2F /* PanModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanModal.h; sourceTree = "<group>"; };
 		0F2A2C542239C119003BDB2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2ED1ECA2263999C10098FE48 /* PanModalPresentable+Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanModalPresentable+Defaults.swift"; sourceTree = "<group>"; };
-		2ED1ECA3263999C10098FE48 /* PanModalPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresentable.swift; sourceTree = "<group>"; };
-		2ED1ECA4263999C10098FE48 /* PanModalPresentable+LayoutHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanModalPresentable+LayoutHelpers.swift"; sourceTree = "<group>"; };
-		2ED1ECA5263999C10098FE48 /* PanModalHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalHeight.swift; sourceTree = "<group>"; };
-		2ED1ECA6263999C10098FE48 /* PanModalPresentable+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanModalPresentable+UIViewController.swift"; sourceTree = "<group>"; };
-		2ED1ECA7263999C10098FE48 /* PanModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanModal.h; sourceTree = "<group>"; };
-		2ED1ECA9263999C10098FE48 /* UIViewController+PanModalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PanModalPresenter.swift"; sourceTree = "<group>"; };
-		2ED1ECAA263999C10098FE48 /* PanModalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresenter.swift; sourceTree = "<group>"; };
-		2ED1ECAC263999C10098FE48 /* PanModalPresentationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresentationDelegate.swift; sourceTree = "<group>"; };
-		2ED1ECAE263999C10098FE48 /* PanModalAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalAnimator.swift; sourceTree = "<group>"; };
-		2ED1ECAF263999C10098FE48 /* PanModalPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresentationAnimator.swift; sourceTree = "<group>"; };
-		2ED1ECB1263999C10098FE48 /* PanModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresentationController.swift; sourceTree = "<group>"; };
-		2ED1ECB3263999C10098FE48 /* PanContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanContainerView.swift; sourceTree = "<group>"; };
-		2ED1ECB4263999C10098FE48 /* DimmedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmedView.swift; sourceTree = "<group>"; };
+		2E088F9C2639AC2900DF7023 /* PanModalPresentable+Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanModalPresentable+Defaults.swift"; sourceTree = "<group>"; };
+		2E088F9D2639AC2900DF7023 /* PanModalPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresentable.swift; sourceTree = "<group>"; };
+		2E088F9E2639AC2900DF7023 /* PanModalPresentable+LayoutHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanModalPresentable+LayoutHelpers.swift"; sourceTree = "<group>"; };
+		2E088F9F2639AC2900DF7023 /* PanModalHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalHeight.swift; sourceTree = "<group>"; };
+		2E088FA02639AC2900DF7023 /* PanModalPresentable+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanModalPresentable+UIViewController.swift"; sourceTree = "<group>"; };
+		2E088FA22639AC2900DF7023 /* PanModalDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = PanModalDemo.xcodeproj; sourceTree = "<group>"; };
+		2E088FA52639AC2900DF7023 /* PanModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanModal.h; sourceTree = "<group>"; };
+		2E088FA72639AC2900DF7023 /* UIViewController+PanModalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PanModalPresenter.swift"; sourceTree = "<group>"; };
+		2E088FA82639AC2900DF7023 /* PanModalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresenter.swift; sourceTree = "<group>"; };
+		2E088FAA2639AC2900DF7023 /* PanModalPresentationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresentationDelegate.swift; sourceTree = "<group>"; };
+		2E088FAC2639AC2900DF7023 /* PanModalAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalAnimator.swift; sourceTree = "<group>"; };
+		2E088FAD2639AC2900DF7023 /* PanModalPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresentationAnimator.swift; sourceTree = "<group>"; };
+		2E088FAF2639AC2900DF7023 /* PanModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresentationController.swift; sourceTree = "<group>"; };
+		2E088FB12639AC2900DF7023 /* PanContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanContainerView.swift; sourceTree = "<group>"; };
+		2E088FB22639AC2900DF7023 /* DimmedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmedView.swift; sourceTree = "<group>"; };
 		2EF02B8B263586C5009EF2A4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		743CABAF2225FC9F00634A5A /* UserGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupViewController.swift; sourceTree = "<group>"; };
 		743CABB12225FD1100634A5A /* UserGroupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupHeaderView.swift; sourceTree = "<group>"; };
@@ -157,6 +158,90 @@
 			path = PanModal;
 			sourceTree = "<group>";
 		};
+		2E088F9A2639AC2900DF7023 /* PanModal */ = {
+			isa = PBXGroup;
+			children = (
+				2E088FA52639AC2900DF7023 /* PanModal.h */,
+				2E088F9B2639AC2900DF7023 /* Presentable */,
+				2E088FA12639AC2900DF7023 /* PanModal */,
+				2E088FA62639AC2900DF7023 /* Presenter */,
+				2E088FA92639AC2900DF7023 /* Delegate */,
+				2E088FAB2639AC2900DF7023 /* Animator */,
+				2E088FAE2639AC2900DF7023 /* Controller */,
+				2E088FB02639AC2900DF7023 /* View */,
+			);
+			name = PanModal;
+			path = ../../../PanModal;
+			sourceTree = "<group>";
+		};
+		2E088F9B2639AC2900DF7023 /* Presentable */ = {
+			isa = PBXGroup;
+			children = (
+				2E088F9C2639AC2900DF7023 /* PanModalPresentable+Defaults.swift */,
+				2E088F9D2639AC2900DF7023 /* PanModalPresentable.swift */,
+				2E088F9E2639AC2900DF7023 /* PanModalPresentable+LayoutHelpers.swift */,
+				2E088F9F2639AC2900DF7023 /* PanModalHeight.swift */,
+				2E088FA02639AC2900DF7023 /* PanModalPresentable+UIViewController.swift */,
+			);
+			path = Presentable;
+			sourceTree = "<group>";
+		};
+		2E088FA12639AC2900DF7023 /* PanModal */ = {
+			isa = PBXGroup;
+			children = (
+				2E088FA22639AC2900DF7023 /* PanModalDemo.xcodeproj */,
+			);
+			path = PanModal;
+			sourceTree = "<group>";
+		};
+		2E088FA32639AC2900DF7023 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E088FA62639AC2900DF7023 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E088FA72639AC2900DF7023 /* UIViewController+PanModalPresenter.swift */,
+				2E088FA82639AC2900DF7023 /* PanModalPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E088FA92639AC2900DF7023 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				2E088FAA2639AC2900DF7023 /* PanModalPresentationDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		2E088FAB2639AC2900DF7023 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				2E088FAC2639AC2900DF7023 /* PanModalAnimator.swift */,
+				2E088FAD2639AC2900DF7023 /* PanModalPresentationAnimator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		2E088FAE2639AC2900DF7023 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E088FAF2639AC2900DF7023 /* PanModalPresentationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2E088FB02639AC2900DF7023 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E088FB12639AC2900DF7023 /* PanContainerView.swift */,
+				2E088FB22639AC2900DF7023 /* DimmedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2E335D26263952AF00D0F986 /* ReleasedController */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,76 +261,6 @@
 				943904EE2226383700859537 /* NavigationController.swift */,
 			);
 			path = Navigation;
-			sourceTree = "<group>";
-		};
-		2ED1ECA0263999C10098FE48 /* PanModal */ = {
-			isa = PBXGroup;
-			children = (
-				2ED1ECA1263999C10098FE48 /* Presentable */,
-				2ED1ECA8263999C10098FE48 /* Presenter */,
-				2ED1ECAB263999C10098FE48 /* Delegate */,
-				2ED1ECAD263999C10098FE48 /* Animator */,
-				2ED1ECB0263999C10098FE48 /* Controller */,
-				2ED1ECB2263999C10098FE48 /* View */,
-				2ED1ECA7263999C10098FE48 /* PanModal.h */,
-			);
-			name = PanModal;
-			path = "../../panmodel-unused/panmodel-unused/PanModal";
-			sourceTree = "<group>";
-		};
-		2ED1ECA1263999C10098FE48 /* Presentable */ = {
-			isa = PBXGroup;
-			children = (
-				2ED1ECA2263999C10098FE48 /* PanModalPresentable+Defaults.swift */,
-				2ED1ECA3263999C10098FE48 /* PanModalPresentable.swift */,
-				2ED1ECA4263999C10098FE48 /* PanModalPresentable+LayoutHelpers.swift */,
-				2ED1ECA5263999C10098FE48 /* PanModalHeight.swift */,
-				2ED1ECA6263999C10098FE48 /* PanModalPresentable+UIViewController.swift */,
-			);
-			path = Presentable;
-			sourceTree = "<group>";
-		};
-		2ED1ECA8263999C10098FE48 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				2ED1ECA9263999C10098FE48 /* UIViewController+PanModalPresenter.swift */,
-				2ED1ECAA263999C10098FE48 /* PanModalPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		2ED1ECAB263999C10098FE48 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				2ED1ECAC263999C10098FE48 /* PanModalPresentationDelegate.swift */,
-			);
-			path = Delegate;
-			sourceTree = "<group>";
-		};
-		2ED1ECAD263999C10098FE48 /* Animator */ = {
-			isa = PBXGroup;
-			children = (
-				2ED1ECAE263999C10098FE48 /* PanModalAnimator.swift */,
-				2ED1ECAF263999C10098FE48 /* PanModalPresentationAnimator.swift */,
-			);
-			path = Animator;
-			sourceTree = "<group>";
-		};
-		2ED1ECB0263999C10098FE48 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				2ED1ECB1263999C10098FE48 /* PanModalPresentationController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		2ED1ECB2263999C10098FE48 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2ED1ECB3263999C10098FE48 /* PanContainerView.swift */,
-				2ED1ECB4263999C10098FE48 /* DimmedView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		2EF02B89263585A5009EF2A4 /* DevelopedController */ = {
@@ -385,7 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				DCA741AC216D90410021F2F2 /* Sample */,
-				2ED1ECA0263999C10098FE48 /* PanModal */,
+				2E088F9A2639AC2900DF7023 /* PanModal */,
 				743CABC52226171500634A5A /* Tests */,
 				0F2A2C522239C119003BDB2F /* PanModal */,
 				DCA741AB216D90410021F2F2 /* Products */,
@@ -515,6 +530,12 @@
 			mainGroup = DCA741A1216D90410021F2F2;
 			productRefGroup = DCA741AB216D90410021F2F2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2E088FA32639AC2900DF7023 /* Products */;
+					ProjectRef = 2E088FA22639AC2900DF7023 /* PanModalDemo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DCA741A9216D90410021F2F2 /* PanModalDemo */,
@@ -572,35 +593,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC3B2EBA222A560A000C8A4A /* TransientAlertViewController.swift in Sources */,
-				2ED1ECB8263999C10098FE48 /* PanModalHeight.swift in Sources */,
+				2E088FB62639AC2900DF7023 /* PanModalHeight.swift in Sources */,
 				743CABB42225FE7700634A5A /* UserGroupMemberPresentable.swift in Sources */,
-				2ED1ECBC263999C10098FE48 /* PanModalPresentationDelegate.swift in Sources */,
-				2ED1ECB6263999C10098FE48 /* PanModalPresentable.swift in Sources */,
+				2E088FBA2639AC2900DF7023 /* PanModalPresentationDelegate.swift in Sources */,
+				2E088FB42639AC2900DF7023 /* PanModalPresentable.swift in Sources */,
 				743CABB8222600C600634A5A /* UserGroupMemberCell.swift in Sources */,
 				743CABB62225FEEE00634A5A /* UserGroupHeaderPresentable.swift in Sources */,
 				743CB2AA222660D100665A55 /* StackedProfileViewController.swift in Sources */,
-				2ED1ECC0263999C10098FE48 /* PanContainerView.swift in Sources */,
+				2E088FBE2639AC2900DF7023 /* PanContainerView.swift in Sources */,
 				943904EB2226354100859537 /* BasicViewController.swift in Sources */,
-				2ED1ECB7263999C10098FE48 /* PanModalPresentable+LayoutHelpers.swift in Sources */,
+				2E088FB52639AC2900DF7023 /* PanModalPresentable+LayoutHelpers.swift in Sources */,
 				943904EF2226383700859537 /* NavigationController.swift in Sources */,
-				2ED1ECC1263999C10098FE48 /* DimmedView.swift in Sources */,
-				2ED1ECBF263999C10098FE48 /* PanModalPresentationController.swift in Sources */,
+				2E088FBF2639AC2900DF7023 /* DimmedView.swift in Sources */,
+				2E088FBD2639AC2900DF7023 /* PanModalPresentationController.swift in Sources */,
 				DC3B2EBE222A58C9000C8A4A /* AlertView.swift in Sources */,
 				943904F32226484F00859537 /* UserGroupStackedViewController.swift in Sources */,
-				2ED1ECB5263999C10098FE48 /* PanModalPresentable+Defaults.swift in Sources */,
+				2E088FB32639AC2900DF7023 /* PanModalPresentable+Defaults.swift in Sources */,
 				2EF02B8C263586C5009EF2A4 /* TableViewController.swift in Sources */,
 				943904ED2226366700859537 /* AlertViewController.swift in Sources */,
 				743CABB22225FD1100634A5A /* UserGroupHeaderView.swift in Sources */,
 				DC139061216D93ED007A3E64 /* SampleViewController.swift in Sources */,
-				2ED1ECBD263999C10098FE48 /* PanModalAnimator.swift in Sources */,
+				2E088FBB2639AC2900DF7023 /* PanModalAnimator.swift in Sources */,
 				743CABB02225FC9F00634A5A /* UserGroupViewController.swift in Sources */,
-				2ED1ECB9263999C10098FE48 /* PanModalPresentable+UIViewController.swift in Sources */,
-				2ED1ECBA263999C10098FE48 /* UIViewController+PanModalPresenter.swift in Sources */,
+				2E088FB72639AC2900DF7023 /* PanModalPresentable+UIViewController.swift in Sources */,
+				2E088FB82639AC2900DF7023 /* UIViewController+PanModalPresenter.swift in Sources */,
 				743CABD322265F2E00634A5A /* ProfileViewController.swift in Sources */,
 				944EBA2E227BB7F400C4C97B /* FullScreenNavController.swift in Sources */,
-				2ED1ECBB263999C10098FE48 /* PanModalPresenter.swift in Sources */,
+				2E088FB92639AC2900DF7023 /* PanModalPresenter.swift in Sources */,
 				DCA741AE216D90410021F2F2 /* AppDelegate.swift in Sources */,
-				2ED1ECBE263999C10098FE48 /* PanModalPresentationAnimator.swift in Sources */,
+				2E088FBC2639AC2900DF7023 /* PanModalPresentationAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
