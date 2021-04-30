@@ -132,4 +132,8 @@ extension TableViewController: PanModalPresentable {
     var indicatorBackgroundColor: UIColor {
         return tableView.backgroundColor ?? .white
     }
+    
+    var controllerTitle: String {
+        return "Table"
+    }
 }

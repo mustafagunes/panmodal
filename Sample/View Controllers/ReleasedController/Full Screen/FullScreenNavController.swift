@@ -45,6 +45,10 @@ extension FullScreenNavController: PanModalPresentable {
     var showCloseButton: Bool {
         return true
     }
+    
+    var controllerTitle: String {
+        return "FullScreenNav"
+    }
 }
 
 private class FullScreenViewController: UIViewController {

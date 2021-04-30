@@ -110,4 +110,7 @@ class StackedProfileViewController: UIViewController, PanModalPresentable {
         return true
     }
 
+    var controllerTitle: String {
+        return "StackedProfile"
+    }
 }

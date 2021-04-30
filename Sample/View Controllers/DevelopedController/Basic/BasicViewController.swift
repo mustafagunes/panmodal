@@ -124,4 +124,8 @@ extension BasicViewController: PanModalPresentable {
     var indicatorBackgroundColor: UIColor {
         return view.backgroundColor ?? .white
     }
+    
+    var controllerTitle: String {
+        return "Basic"
+    }
 }

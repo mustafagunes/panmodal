@@ -53,6 +53,10 @@ class NavigationController: UINavigationController, PanModalPresentable {
     var indicatorBackgroundColor: UIColor {
         return (topViewController as? PanModalPresentable)?.panScrollable?.backgroundColor ?? .white
     }
+    
+    var controllerTitle: String {
+        return "Navigation"
+    }
 }
 
 private class NavUserGroups: UserGroupViewController {

@@ -61,4 +61,8 @@ class AlertViewController: UIViewController, PanModalPresentable {
     var isUserInteractionEnabled: Bool {
         return true
     }
+    
+    var controllerTitle: String {
+        return "Alert"
+    }
 }
