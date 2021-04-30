@@ -35,8 +35,10 @@ open class PanModalPresentationController: UIPresentationController {
      Constants
      */
     enum Constants {
+        static let indicatorYOffset = CGFloat(8.0)
         static let snapMovementSensitivity = CGFloat(0.7)
-        static let indicatorContentHeight = CGFloat(50.0)
+        static let indicatorContentHeight = CGFloat(20.0)
+        static let dragIndicatorSize = CGSize(width: 42.0, height: 5.0)
     }
 
     // MARK: - Properties
@@ -131,22 +133,15 @@ open class PanModalPresentationController: UIPresentationController {
         view.backgroundColor = presentable?.indicatorBackgroundColor
         return view
     }()
-
-    private lazy var closeButton: UIButton = {
-        let button = UIButton()
-        let image = UIImage(named: "ic_close")
-        button.setImage(image, for: .normal)
-        button.backgroundColor = .clear
-        return button
-    }()
     
-    #warning("font tipi roboto yapılacak")
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = presentable?.controllerTitle
-        label.textColor = UIColor(red: 0.84, green: 0.07, blue: 0.09, alpha: 1.00)
-        label.font = .boldSystemFont(ofSize: 17)
-        return label
+    /**
+     Drag Indicator View
+     */
+    private lazy var dragIndicatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = presentable?.dragIndicatorBackgroundColor
+        view.layer.cornerRadius = Constants.dragIndicatorSize.height / 2.0
+        return view
     }()
 
     /**
@@ -305,12 +300,6 @@ private extension PanModalPresentationController {
      based on the pan modal presentable.
      */
     func layoutPresentedView(in containerView: UIView) {
-        /**
-         If the presented view controller does not conform to pan modal presentable
-         don't configure
-         */
-        guard let presentable = presentable
-        else { return }
 
         /**
          ⚠️ If this class is NOT used in conjunction with the PanModalPresentationAnimator
@@ -321,12 +310,8 @@ private extension PanModalPresentationController {
         containerView.addGestureRecognizer(self.panGestureRecognizer)
 
         self.addDragIndicatorContentView(to: self.presentedView)
-
-        if presentable.showCloseButton {
-            self.addCloseButton(to: self.presentedView)
-        }
         
-        self.addTitleLabel(to: self.presentedView)
+        addDragIndicatorView(to: presentedView)
 
         self.setNeedsLayoutUpdate()
         self.adjustPanContainerBackgroundColor()
@@ -387,27 +372,20 @@ private extension PanModalPresentationController {
         self.dragIndicatorContentView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         self.dragIndicatorContentView.widthAnchor.constraint(equalTo: self.presentedView.widthAnchor).isActive = true
         self.dragIndicatorContentView.heightAnchor.constraint(equalToConstant: Constants.indicatorContentHeight).isActive = true
-        self.dragIndicatorContentView.roundCorners(corners: [.topLeft, .topRight], radius: 16.0)
-    }
-
-    func addCloseButton(to view: UIView) {
-        view.addSubview(self.closeButton)
-        view.bringSubviewToFront(self.closeButton)
-        self.closeButton.translatesAutoresizingMaskIntoConstraints = false
-        self.closeButton.centerYAnchor.constraint(equalTo: self.dragIndicatorContentView.centerYAnchor, constant: -5).isActive = true
-        self.closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-        self.closeButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        self.closeButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        self.closeButton.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
+        self.dragIndicatorContentView.roundCorners(corners: [.topLeft, .topRight], radius: 10.0)
     }
     
-    func addTitleLabel(to view: UIView) {
-        view.addSubview(titleLabel)
-        
-        self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.titleLabel.topAnchor.constraint(equalTo: self.dragIndicatorContentView.topAnchor, constant: 30).isActive = true
-        self.titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-        self.titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+    /**
+     Adds the drag indicator view to the view hierarchy
+     & configures its layout constraints.
+     */
+    func addDragIndicatorView(to view: UIView) {
+        view.addSubview(dragIndicatorView)
+        dragIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        dragIndicatorView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: -Constants.indicatorYOffset).isActive = true
+        dragIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        dragIndicatorView.widthAnchor.constraint(equalToConstant: Constants.dragIndicatorSize.width).isActive = true
+        dragIndicatorView.heightAnchor.constraint(equalToConstant: Constants.dragIndicatorSize.height).isActive = true
     }
 
     /**

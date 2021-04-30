@@ -97,6 +97,12 @@ public protocol PanModalPresentable: AnyObject {
      Default Value is black with alpha component 0.7.
      */
     var panModalBackgroundColor: UIColor { get }
+    
+    /**
+     The drag indicator view color.
+     Default value is light gray.
+     */
+    var dragIndicatorBackgroundColor: UIColor { get }
 
     /**
      We configure the panScrollable's scrollIndicatorInsets interally so override this value
@@ -160,13 +166,6 @@ public protocol PanModalPresentable: AnyObject {
      Default value is true.
      */
     var shouldRoundTopCorners: Bool { get }
-
-    /**
-     A flag held to adjust the visibility of the close button.
-
-     Default value is true.
-     */
-    var showCloseButton: Bool { get }
 
     /**
      The indicator background color.

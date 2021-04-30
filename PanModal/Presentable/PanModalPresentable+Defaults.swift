@@ -51,6 +51,10 @@ public extension PanModalPresentable where Self: UIViewController {
     var indicatorBackgroundColor: UIColor {
         return .white
     }
+    
+    var dragIndicatorBackgroundColor: UIColor {
+        return UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1.00)
+    }
 
     var scrollIndicatorInsets: UIEdgeInsets {
         let top = self.shouldRoundTopCorners ? self.cornerRadius : 0
