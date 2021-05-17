@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StackedProfileViewController: UIViewController, PanModalPresentable {
+class StackedProfileViewController: UIViewController, YSPanModalPresentable {
 
     // MARK: - Properties
 
@@ -98,7 +98,7 @@ class StackedProfileViewController: UIViewController, PanModalPresentable {
         return nil
     }
 
-    var longFormHeight: PanModalHeight {
+    var longFormHeight: YSPanModalHeight {
         return .intrinsicHeight
     }
 

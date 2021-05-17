@@ -1,8 +1,9 @@
 //
-//  PanModalHeight.swift
-//  PanModal
+//  YSPanModalHeight.swift
+//  YSPanModal
 //
-//  Copyright © 2019 Tiny Speck, Inc. All rights reserved.
+//  Created by Mustafa Gunes on 5.05.2021.
+//  Copyright © 2021 yemeksepeti. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +12,7 @@ import UIKit
  An enum that defines the possible states of the height of a pan modal container view
  for a given presentation state (shortForm, longForm)
  */
-public enum PanModalHeight: Equatable {
+public enum YSPanModalHeight: Equatable {
     /**
      Sets the height to be the maximum height (+ topOffset)
      */

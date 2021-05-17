@@ -1,8 +1,9 @@
 //
-//  DimmedView.swift
-//  PanModal
+//  YSDimmedView.swift
+//  YSPanModal
 //
-//  Copyright © 2017 Tiny Speck, Inc. All rights reserved.
+//  Created by Mustafa Gunes on 5.05.2021.
+//  Copyright © 2021 yemeksepeti. All rights reserved.
 //
 
 import UIKit
@@ -10,12 +11,12 @@ import UIKit
 /**
  A dim view for use as an overlay over content you want dimmed.
  */
-public class DimmedView: UIView {
+public class YSDimmedView: UIView {
     /**
      Represents the possible states of the dimmed view.
      max, off or a percentage of dimAlpha.
      */
-    enum DimState {
+    enum YSDimState {
         case max
         case off
         case percent(CGFloat)
@@ -26,7 +27,7 @@ public class DimmedView: UIView {
     /**
      The state of the dimmed view
      */
-    var dimState: DimState = .off {
+    var dimState: YSDimState = .off {
         didSet {
             switch self.dimState {
             case .max:

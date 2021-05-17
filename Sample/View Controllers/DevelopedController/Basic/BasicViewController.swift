@@ -102,7 +102,7 @@ class BasicViewController: UIViewController {
     }
 }
 
-extension BasicViewController: PanModalPresentable {
+extension BasicViewController: YSPanModalPresentable {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -112,7 +112,7 @@ extension BasicViewController: PanModalPresentable {
         return nil
     }
 
-    var longFormHeight: PanModalHeight {
+    var longFormHeight: YSPanModalHeight {
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
         return .intrinsicHeightWithInsets(insets: insets)
     }

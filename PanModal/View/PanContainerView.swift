@@ -1,8 +1,9 @@
 //
-//  PanContainerView.swift
-//  PanModal
+//  YSPanContainerView.swift
+//  YSPanModal
 //
-//  Copyright © 2018 Tiny Speck, Inc. All rights reserved.
+//  Created by Mustafa Gunes on 5.05.2021.
+//  Copyright © 2021 yemeksepeti. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +14,7 @@ import UIKit
  This allows us to make modifications to the presented view without
  having to do those changes directly on the view
  */
-class PanContainerView: UIView {
+class YSPanContainerView: UIView {
     init(presentedView: UIView, frame: CGRect) {
         super.init(frame: frame)
         addSubview(presentedView)
@@ -27,12 +28,12 @@ class PanContainerView: UIView {
 
 extension UIView {
     /**
-     Convenience property for retrieving a PanContainerView instance
+     Convenience property for retrieving a YSPanContainerView instance
      from the view hierachy
      */
-    var panContainerView: PanContainerView? {
+    var panContainerView: YSPanContainerView? {
         return subviews.first(where: { view -> Bool in
-            view is PanContainerView
-        }) as? PanContainerView
+            view is YSPanContainerView
+        }) as? YSPanContainerView
     }
 }

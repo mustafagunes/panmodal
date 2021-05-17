@@ -1,8 +1,9 @@
 //
-//  PanModalPresentable+LayoutHelpers.swift
-//  PanModal
+//  YSPanModalPresentable+LayoutHelpers.swift
+//  YSPanModal
 //
-//  Copyright © 2018 Tiny Speck, Inc. All rights reserved.
+//  Created by Mustafa Gunes on 5.05.2021.
+//  Copyright © 2021 yemeksepeti. All rights reserved.
 //
 
 import UIKit
@@ -11,13 +12,13 @@ import UIKit
  ⚠️ [Internal Only] ⚠️
  Helper extensions that handle layout in the PanModalPresentationController
  */
-extension PanModalPresentable where Self: UIViewController {
+extension YSPanModalPresentable where Self: UIViewController {
     /**
      Cast the presentation controller to PanModalPresentationController
      so we can access PanModalPresentationController properties and methods
      */
-    var presentedVC: PanModalPresentationController? {
-        return presentationController as? PanModalPresentationController
+    var presentedVC: YSPanModalPresentationController? {
+        return presentationController as? YSPanModalPresentationController
     }
 
     /**
@@ -83,7 +84,7 @@ extension PanModalPresentable where Self: UIViewController {
      Converts a given pan modal height value into a y position value
      calculated from top of view
      */
-    func topMargin(from: PanModalHeight) -> CGFloat {
+    func topMargin(from: YSPanModalHeight) -> CGFloat {
         switch from {
         case .maxHeight:
             return 0.0

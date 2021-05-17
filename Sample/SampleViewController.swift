@@ -61,7 +61,7 @@ class SampleViewController: UITableViewController {
 
 protocol RowPresentable {
     var string: String { get }
-    var rowVC: UIViewController & PanModalPresentable { get }
+    var rowVC: UIViewController & YSPanModalPresentable { get }
 }
 
 private extension SampleViewController {
@@ -81,17 +81,17 @@ private extension SampleViewController {
 
         struct Basic: RowPresentable {
             let string: String = "Basic"
-            let rowVC: PanModalPresentable.LayoutType = BasicViewController()
+            let rowVC: YSPanModalPresentable.LayoutType = BasicViewController()
         }
         
         struct Table: RowPresentable {
             let string: String = "Table"
-            let rowVC: PanModalPresentable.LayoutType = TableViewController()
+            let rowVC: YSPanModalPresentable.LayoutType = TableViewController()
         }
 
         struct Navigation: RowPresentable {
             let string: String = "NavigationController"
-            let rowVC: PanModalPresentable.LayoutType = NavigationController()
+            let rowVC: YSPanModalPresentable.LayoutType = NavigationController()
         }
     }
 }

@@ -1,44 +1,45 @@
 //
-//  PanModalPresentationDelegate.swift
-//  PanModal
+//  YSPanModalPresentationDelegate.swift
+//  YSPanModal
 //
-//  Copyright © 2019 Tiny Speck, Inc. All rights reserved.
+//  Created by Mustafa Gunes on 5.05.2021.
+//  Copyright © 2021 yemeksepeti. All rights reserved.
 //
 
 import UIKit
 
 /**
- The PanModalPresentationDelegate conforms to the various transition delegates
+ The YSPanModalPresentationDelegate conforms to the various transition delegates
  and vends the appropriate object for each transition controller requested.
 
  Usage:
  ```
  viewController.modalPresentationStyle = .custom
- viewController.transitioningDelegate = PanModalPresentationDelegate.default
+ viewController.transitioningDelegate = YSPanModalPresentationDelegate.default
  ```
  */
-public class PanModalPresentationDelegate: NSObject {
+public class YSPanModalPresentationDelegate: NSObject {
     /**
      Returns an instance of the delegate, retained for the duration of presentation
      */
-    public static var `default`: PanModalPresentationDelegate = {
-        PanModalPresentationDelegate()
+    public static var `default`: YSPanModalPresentationDelegate = {
+        YSPanModalPresentationDelegate()
     }()
 }
 
-extension PanModalPresentationDelegate: UIViewControllerTransitioningDelegate {
+extension YSPanModalPresentationDelegate: UIViewControllerTransitioningDelegate {
     /**
      Returns a modal presentation animator configured for the presenting state
      */
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PanModalPresentationAnimator(transitionStyle: .presentation)
+        return YSPanModalPresentationAnimator(transitionStyle: .presentation)
     }
 
     /**
      Returns a modal presentation animator configured for the dismissing state
      */
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PanModalPresentationAnimator(transitionStyle: .dismissal)
+        return YSPanModalPresentationAnimator(transitionStyle: .dismissal)
     }
 
     /**
@@ -48,13 +49,13 @@ extension PanModalPresentationDelegate: UIViewControllerTransitioningDelegate {
      Changes in size class during presentation are handled via the adaptive presentation delegate
      */
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let controller = PanModalPresentationController(presentedViewController: presented, presenting: presenting)
+        let controller = YSPanModalPresentationController(presentedViewController: presented, presenting: presenting)
         controller.delegate = self
         return controller
     }
 }
 
-extension PanModalPresentationDelegate: UIAdaptivePresentationControllerDelegate, UIPopoverPresentationControllerDelegate {
+extension YSPanModalPresentationDelegate: UIAdaptivePresentationControllerDelegate, UIPopoverPresentationControllerDelegate {
     /**
      - Note: We do not adapt to size classes due to the introduction of the UIPresentationController
      & deprecation of UIPopoverController (iOS 9), there is no way to have more than one

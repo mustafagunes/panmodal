@@ -200,10 +200,10 @@
 		2E42B625263BE0DE00DEBF40 /* Presentable */ = {
 			isa = PBXGroup;
 			children = (
-				2E42B626263BE0DE00DEBF40 /* PanModalPresentable+Defaults.swift */,
-				2E42B627263BE0DE00DEBF40 /* PanModalPresentable.swift */,
-				2E42B628263BE0DE00DEBF40 /* PanModalPresentable+LayoutHelpers.swift */,
 				2E42B629263BE0DE00DEBF40 /* PanModalHeight.swift */,
+				2E42B627263BE0DE00DEBF40 /* PanModalPresentable.swift */,
+				2E42B626263BE0DE00DEBF40 /* PanModalPresentable+Defaults.swift */,
+				2E42B628263BE0DE00DEBF40 /* PanModalPresentable+LayoutHelpers.swift */,
 				2E42B62A263BE0DE00DEBF40 /* PanModalPresentable+UIViewController.swift */,
 			);
 			path = Presentable;
@@ -212,8 +212,8 @@
 		2E42B62B263BE0DE00DEBF40 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				2E42B62C263BE0DE00DEBF40 /* UIViewController+PanModalPresenter.swift */,
 				2E42B62D263BE0DE00DEBF40 /* PanModalPresenter.swift */,
+				2E42B62C263BE0DE00DEBF40 /* UIViewController+PanModalPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -221,8 +221,8 @@
 		2E42B62E263BE0DE00DEBF40 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2E42B62F263BE0DE00DEBF40 /* PanContainerView.swift */,
 				2E42B630263BE0DE00DEBF40 /* DimmedView.swift */,
+				2E42B62F263BE0DE00DEBF40 /* PanContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

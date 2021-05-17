@@ -1,14 +1,15 @@
 //
-//  PanModalPresentationController.swift
-//  PanModal
+//  YSPanModalPresentationController.swift
+//  YSPanModal
 //
-//  Copyright © 2019 Tiny Speck, Inc. All rights reserved.
+//  Created by Mustafa Gunes on 5.05.2021.
+//  Copyright © 2021 yemeksepeti. All rights reserved.
 //
 
 import UIKit
 
 /**
- The PanModalPresentationController is the middle layer between the presentingViewController
+ The YSPanModalPresentationController is the middle layer between the presentingViewController
  and the presentedViewController.
 
  It controls the coordination between the individual transition classes as well as
@@ -17,12 +18,12 @@ import UIKit
  For example, we add a drag indicator view above the presented view and
  a background overlay between the presenting & presented view.
 
- The presented view's layout configuration & presentation is defined using the PanModalPresentable.
+ The presented view's layout configuration & presentation is defined using the YSPanModalPresentable.
 
- By conforming to the PanModalPresentable protocol & overriding values
+ By conforming to the YSPanModalPresentable protocol & overriding values
  the presented view can define its layout configuration & presentation.
  */
-open class PanModalPresentationController: UIPresentationController {
+open class YSPanModalPresentationController: UIPresentationController {
     /**
      Enum representing the possible presentation states
      */
@@ -92,10 +93,10 @@ open class PanModalPresentationController: UIPresentationController {
     }
 
     /**
-     Configuration object for PanModalPresentationController
+     Configuration object for YSPanModalPresentationController
      */
-    private var presentable: PanModalPresentable? {
-        return presentedViewController as? PanModalPresentable
+    private var presentable: YSPanModalPresentable? {
+        return presentedViewController as? YSPanModalPresentable
     }
 
     // MARK: - Views
@@ -103,12 +104,12 @@ open class PanModalPresentationController: UIPresentationController {
     /**
      Background view used as an overlay over the presenting view
      */
-    private lazy var backgroundView: DimmedView = {
-        let view: DimmedView
+    private lazy var backgroundView: YSDimmedView = {
+        let view: YSDimmedView
         if let color = presentable?.panModalBackgroundColor {
-            view = DimmedView(dimColor: color)
+            view = YSDimmedView(dimColor: color)
         } else {
-            view = DimmedView()
+            view = YSDimmedView()
         }
         view.didTap = { [weak self] _ in
             if self?.presentable?.allowsTapToDismiss == true {
@@ -123,9 +124,9 @@ open class PanModalPresentationController: UIPresentationController {
      the presented view apperance without changing
      the presented view's properties
      */
-    private lazy var panContainerView: PanContainerView = {
+    private lazy var panContainerView: YSPanContainerView = {
         let frame = containerView?.frame ?? .zero
-        return PanContainerView(presentedView: presentedViewController.view, frame: frame)
+        return YSPanContainerView(presentedView: presentedViewController.view, frame: frame)
     }()
 
     private lazy var dragIndicatorContentView: UIView = {
@@ -233,9 +234,7 @@ open class PanModalPresentationController: UIPresentationController {
         super.viewWillTransition(to: size, with: coordinator)
 
         coordinator.animate(alongsideTransition: { [weak self] _ in
-            guard
-                let self = self else { return }
-
+            guard let self = self else { return }
             self.adjustPresentedViewFrame()
         })
     }
@@ -243,9 +242,9 @@ open class PanModalPresentationController: UIPresentationController {
 
 // MARK: - Public Methods
 
-public extension PanModalPresentationController {
+public extension YSPanModalPresentationController {
     /**
-     Transition the PanModalPresentationController
+     Transition the YSPanModalPresentationController
      to the given presentation state
      */
     func transition(to state: PresentationState, animated: Bool = true) {
@@ -263,8 +262,8 @@ public extension PanModalPresentationController {
     }
 
     /**
-     Updates the PanModalPresentationController layout
-     based on values in the PanModalPresentable
+     Updates the YSPanModalPresentationController layout
+     based on values in the YSPanModalPresentable
 
      - Note: This should be called whenever any
      pan modal presentable value changes after the initial presentation
@@ -279,7 +278,7 @@ public extension PanModalPresentationController {
 
 // MARK: - Presented View Layout Configuration
 
-private extension PanModalPresentationController {
+private extension YSPanModalPresentationController {
     /**
      Boolean flag to determine if the presented view is anchored
      */
@@ -303,7 +302,7 @@ private extension PanModalPresentationController {
 
         /**
          ⚠️ If this class is NOT used in conjunction with the PanModalPresentationAnimator
-         & PanModalPresentable, the presented view should be added to the container view
+         & YSPanModalPresentable, the presented view should be added to the container view
          in the presentation animator instead of here
          */
         containerView.addSubview(self.presentedView)
@@ -392,7 +391,7 @@ private extension PanModalPresentationController {
      Calculates & stores the layout anchor points & options
      */
     func configureViewLayout() {
-        guard let layoutPresentable = presentedViewController as? PanModalPresentable.LayoutType
+        guard let layoutPresentable = presentedViewController as? YSPanModalPresentable.LayoutType
         else { return }
 
         self.shortFormYPosition = layoutPresentable.shortFormYPos
@@ -437,7 +436,7 @@ private extension PanModalPresentationController {
 
 // MARK: - Pan Gesture Event Handler
 
-private extension PanModalPresentationController {
+private extension YSPanModalPresentationController {
     /**
      The designated function for handling pan gesture events
      */
@@ -605,7 +604,7 @@ private extension PanModalPresentationController {
 
     func snap(toYPosition yPos: CGFloat, animated: Bool = true) {
         if animated {
-            PanModalAnimator.animate({ [weak self] in
+            YSPanModalAnimator.animate({ [weak self] in
                 self?.adjust(toYPosition: yPos)
                 self?.isPresentedViewAnimating = true
             }, config: self.presentable) { [weak self] didComplete in
@@ -659,7 +658,7 @@ private extension PanModalPresentationController {
 
 // MARK: - UIScrollView Observer
 
-private extension PanModalPresentationController {
+private extension YSPanModalPresentationController {
     /**
      Creates & stores an observer on the given scroll view's content offset.
      This allows us to track scrolling without overriding the scrollView delegate
@@ -685,7 +684,7 @@ private extension PanModalPresentationController {
      otherwise glitchy behaviour occurs
 
      This is also shown in Apple Maps (reverse engineering)
-     which allows us to seamlessly transition scrolling from the panContainerView to the scrollView
+     which allows us to seamlessly transition scrolling from the YSPanContainerView to the scrollView
      */
     func didPanOnScrollView(_ scrollView: UIScrollView, change: NSKeyValueObservedChange<CGPoint>) {
         guard
@@ -784,7 +783,7 @@ private extension PanModalPresentationController {
 
 // MARK: - UIGestureRecognizerDelegate
 
-extension PanModalPresentationController: UIGestureRecognizerDelegate {
+extension YSPanModalPresentationController: UIGestureRecognizerDelegate {
     /**
      Do not require any other gesture recognizers to fail
      */

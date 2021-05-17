@@ -1,8 +1,9 @@
 //
-//  PanModalPresentable.swift
-//  PanModal
+//  YSPanModalPresentable.swift
+//  YSPanModal
 //
-//  Copyright © 2017 Tiny Speck, Inc. All rights reserved.
+//  Created by Mustafa Gunes on 5.05.2021.
+//  Copyright © 2021 yemeksepeti. All rights reserved.
 //
 
 import UIKit
@@ -13,12 +14,12 @@ import UIKit
 
  Usage:
  ```
- extension YourViewController: PanModalPresentable {
+ extension YourViewController: YSPanModalPresentable {
  func shouldRoundTopCorners: Bool { return false }
  }
  ```
  */
-public protocol PanModalPresentable: AnyObject {
+public protocol YSPanModalPresentable: AnyObject {
     /**
      Determines the title of the opened controller.
      */
@@ -46,7 +47,7 @@ public protocol PanModalPresentable: AnyObject {
 
      Default value is the longFormHeight.
      */
-    var shortFormHeight: PanModalHeight { get }
+    var shortFormHeight: YSPanModalHeight { get }
 
     /**
      The height of the pan modal container view
@@ -56,7 +57,7 @@ public protocol PanModalPresentable: AnyObject {
 
      Default value is .max.
      */
-    var longFormHeight: PanModalHeight { get }
+    var longFormHeight: YSPanModalHeight { get }
 
     /**
      The corner radius used when `shouldRoundTopCorners` is enabled.
@@ -212,14 +213,14 @@ public protocol PanModalPresentable: AnyObject {
 
      Default value is true.
      */
-    func shouldTransition(to state: PanModalPresentationController.PresentationState) -> Bool
+    func shouldTransition(to state: YSPanModalPresentationController.PresentationState) -> Bool
 
     /**
      Notifies the delegate that the pan modal is about to transition to a new state.
 
      Default value is an empty implementation.
      */
-    func willTransition(to state: PanModalPresentationController.PresentationState)
+    func willTransition(to state: YSPanModalPresentationController.PresentationState)
 
     /**
      Notifies the delegate that the pan modal is about to be dismissed.

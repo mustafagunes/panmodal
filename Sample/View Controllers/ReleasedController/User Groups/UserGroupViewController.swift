@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserGroupViewController: UITableViewController, PanModalPresentable {
+class UserGroupViewController: UITableViewController, YSPanModalPresentable {
 
     let members: [UserGroupMemberPresentable] = [
         UserGroupMemberPresentable(name: "Naida Schill ✈️", role: "Staff Engineer - Mobile DevXP", avatarBackgroundColor: #colorLiteral(red: 0.7215686275, green: 0.9098039216, blue: 0.5607843137, alpha: 1)),
@@ -93,7 +93,7 @@ class UserGroupViewController: UITableViewController, PanModalPresentable {
         return tableView
     }
 
-    var shortFormHeight: PanModalHeight {
+    var shortFormHeight: YSPanModalHeight {
         return isShortFormEnabled ? .contentHeight(300.0) : longFormHeight
     }
 
@@ -111,7 +111,7 @@ class UserGroupViewController: UITableViewController, PanModalPresentable {
         return headerView.frame.contains(location)
     }
 
-    func willTransition(to state: PanModalPresentationController.PresentationState) {
+    func willTransition(to state: YSPanModalPresentationController.PresentationState) {
         guard isShortFormEnabled, case .longForm = state
             else { return }
 

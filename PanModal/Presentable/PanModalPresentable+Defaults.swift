@@ -1,25 +1,26 @@
 //
-//  PanModalPresentable+Defaults.swift
-//  PanModal
+//  YSPanModalPresentable+Defaults.swift
+//  YSPanModal
 //
-//  Copyright © 2018 Tiny Speck, Inc. All rights reserved.
+//  Created by Mustafa Gunes on 5.05.2021.
+//  Copyright © 2021 yemeksepeti. All rights reserved.
 //
 
 import UIKit
 
 /**
- Default values for the PanModalPresentable.
+ Default values for the YSPanModalPresentable.
  */
-public extension PanModalPresentable where Self: UIViewController {
+public extension YSPanModalPresentable where Self: UIViewController {
     var topOffset: CGFloat {
-        return topLayoutOffset + 45.0
+        return topLayoutOffset + 30.0
     }
 
-    var shortFormHeight: PanModalHeight {
+    var shortFormHeight: YSPanModalHeight {
         return self.longFormHeight
     }
 
-    var longFormHeight: PanModalHeight {
+    var longFormHeight: YSPanModalHeight {
         guard let scrollView = panScrollable
         else { return .maxHeight }
 
@@ -37,7 +38,7 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var transitionDuration: Double {
-        return PanModalAnimator.Constants.defaultTransitionDuration
+        return YSPanModalAnimator.Constants.defaultTransitionDuration
     }
 
     var transitionAnimationOptions: UIView.AnimationOptions {
@@ -103,7 +104,7 @@ public extension PanModalPresentable where Self: UIViewController {
 
     func willRespond(to panModalGestureRecognizer: UIPanGestureRecognizer) {}
 
-    func shouldTransition(to state: PanModalPresentationController.PresentationState) -> Bool {
+    func shouldTransition(to state: YSPanModalPresentationController.PresentationState) -> Bool {
         return true
     }
 
@@ -111,7 +112,7 @@ public extension PanModalPresentable where Self: UIViewController {
         return false
     }
 
-    func willTransition(to state: PanModalPresentationController.PresentationState) {}
+    func willTransition(to state: YSPanModalPresentationController.PresentationState) {}
 
     func panModalWillDismiss() {}
 

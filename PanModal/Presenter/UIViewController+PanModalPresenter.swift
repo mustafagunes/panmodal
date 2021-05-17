@@ -1,8 +1,9 @@
 //
-//  UIViewController+PanModalPresenterProtocol.swift
-//  PanModal
+//  UIViewController+YSPanModalPresenterProtocol.swift
+//  YSPanModal
 //
-//  Copyright © 2019 Tiny Speck, Inc. All rights reserved.
+//  Created by Mustafa Gunes on 5.05.2021.
+//  Copyright © 2021 yemeksepeti. All rights reserved.
 //
 
 import UIKit
@@ -10,7 +11,7 @@ import UIKit
 /**
  Extends the UIViewController to conform to the PanModalPresenter protocol
  */
-extension UIViewController: PanModalPresenter {
+extension UIViewController: YSPanModalPresenter {
     /**
      A flag that returns true if the topmost view controller in the navigation stack
      was presented using the custom PanModal transition
@@ -23,7 +24,7 @@ extension UIViewController: PanModalPresenter {
      a strong reference to this view controller and in turn, creating a memory leak.
      */
     public var isPanModalPresented: Bool {
-        return (transitioningDelegate as? PanModalPresentationDelegate) != nil
+        return (transitioningDelegate as? YSPanModalPresentationDelegate) != nil
     }
 
     /**
@@ -37,7 +38,7 @@ extension UIViewController: PanModalPresenter {
 
      - Note: sourceView & sourceRect are only required for presentation on an iPad.
      */
-    public func presentPanModal(_ viewControllerToPresent: PanModalPresentable.LayoutType,
+    public func presentPanModal(_ viewControllerToPresent: YSPanModalPresentable.LayoutType,
                                 sourceView: UIView? = nil,
                                 sourceRect: CGRect = .zero,
                                 completion: (() -> Void)? = nil)
@@ -50,11 +51,11 @@ extension UIViewController: PanModalPresenter {
             viewControllerToPresent.modalPresentationStyle = .popover
             viewControllerToPresent.popoverPresentationController?.sourceRect = sourceRect
             viewControllerToPresent.popoverPresentationController?.sourceView = sourceView ?? view
-            viewControllerToPresent.popoverPresentationController?.delegate = PanModalPresentationDelegate.default
+            viewControllerToPresent.popoverPresentationController?.delegate = YSPanModalPresentationDelegate.default
         } else {
             viewControllerToPresent.modalPresentationStyle = .custom
             viewControllerToPresent.modalPresentationCapturesStatusBarAppearance = true
-            viewControllerToPresent.transitioningDelegate = PanModalPresentationDelegate.default
+            viewControllerToPresent.transitioningDelegate = YSPanModalPresentationDelegate.default
         }
 
         present(viewControllerToPresent, animated: true, completion: completion)

@@ -1,8 +1,9 @@
 //
-//  PanModalPresenter.swift
-//  PanModal
+//  YSPanModalPresenter.swift
+//  YSPanModal
 //
-//  Copyright © 2019 Tiny Speck, Inc. All rights reserved.
+//  Created by Mustafa Gunes on 5.05.2021.
+//  Copyright © 2021 yemeksepeti. All rights reserved.
 //
 
 import UIKit
@@ -17,11 +18,11 @@ import UIKit
  sourceRect: .zero)
  ```
  */
-protocol PanModalPresenter: AnyObject {
+protocol YSPanModalPresenter: AnyObject {
     /**
-     Presents a view controller that conforms to the PanModalPresentable protocol
+     Presents a view controller that conforms to the YSPanModalPresentable protocol
      */
-    func presentPanModal(_ viewControllerToPresent: PanModalPresentable.LayoutType,
+    func presentPanModal(_ viewControllerToPresent: YSPanModalPresentable.LayoutType,
                          sourceView: UIView?,
                          sourceRect: CGRect,
                          completion: (() -> Void)?)

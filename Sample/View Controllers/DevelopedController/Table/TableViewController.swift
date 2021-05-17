@@ -115,7 +115,7 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 // MARK: - PanModalPresentable
-extension TableViewController: PanModalPresentable {
+extension TableViewController: YSPanModalPresentable {
     
     var panScrollable: UIScrollView? {
         return tableView
@@ -125,7 +125,7 @@ extension TableViewController: PanModalPresentable {
         return false
     }
     
-    var longFormHeight: PanModalHeight {
+    var longFormHeight: YSPanModalHeight {
         return .contentHeight(tableView.contentSize.height)
     }
     
