@@ -380,7 +380,7 @@ private extension YSPanModalPresentationController {
         self.dragIndicatorContentView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         self.dragIndicatorContentView.widthAnchor.constraint(equalTo: self.presentedView.widthAnchor).isActive = true
         self.dragIndicatorContentView.heightAnchor.constraint(equalToConstant: Constants.indicatorContentHeight).isActive = true
-        self.dragIndicatorContentView.roundCorners(corners: [.topLeft, .topRight], radius: 10.0)
+        self.dragIndicatorContentView.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
     }
     
     /**
