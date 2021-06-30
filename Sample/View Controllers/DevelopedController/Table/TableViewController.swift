@@ -133,7 +133,7 @@ extension TableViewController: YSPanModalPresentable {
         return tableView.backgroundColor ?? .white
     }
     
-    var controllerTitle: String {
-        return "Table"
+    var controllerTitle: NSAttributedString {
+        return NSAttributedString(string: "Table")
     }
 }

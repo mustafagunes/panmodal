@@ -62,7 +62,7 @@ class AlertViewController: UIViewController, YSPanModalPresentable {
         return true
     }
     
-    var controllerTitle: String {
-        return "Alert"
+    var controllerTitle: NSAttributedString {
+        return NSAttributedString(string: "Alert")
     }
 }

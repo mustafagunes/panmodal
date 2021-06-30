@@ -54,8 +54,8 @@ class NavigationController: UINavigationController, YSPanModalPresentable {
         return (topViewController as? YSPanModalPresentable)?.panScrollable?.backgroundColor ?? .white
     }
     
-    var controllerTitle: String {
-        return "Navigation"
+    var controllerTitle: NSAttributedString {
+        return NSAttributedString(string: "Navigation")
     }
 }
 

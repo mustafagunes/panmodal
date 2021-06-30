@@ -119,7 +119,7 @@ class UserGroupViewController: UITableViewController, YSPanModalPresentable {
         panModalSetNeedsLayoutUpdate()
     }
 
-    var controllerTitle: String {
-        return "UserGroup"
+    var controllerTitle: NSAttributedString {
+        return NSAttributedString(string: "UserGroup")
     }
 }

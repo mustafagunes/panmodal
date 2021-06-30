@@ -125,7 +125,7 @@ extension BasicViewController: YSPanModalPresentable {
         return view.backgroundColor ?? .white
     }
     
-    var controllerTitle: String {
-        return "Basic"
+    var controllerTitle: NSAttributedString {
+        return NSAttributedString(string: "Basic")
     }
 }

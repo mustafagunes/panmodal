@@ -23,7 +23,7 @@ public protocol YSPanModalPresentable: AnyObject {
     /**
      Determines the title of the opened controller.
      */
-    var controllerTitle: String { get }
+    var controllerTitle: NSAttributedString { get }
     
     /**
      The scroll view embedded in the view controller.
