@@ -13,7 +13,7 @@ import UIKit
  */
 public extension YSPanModalPresentable where Self: UIViewController {
     var topOffset: CGFloat {
-        return topLayoutOffset + 30.0
+        return topLayoutOffset + 50.0
     }
 
     var shortFormHeight: YSPanModalHeight {
@@ -55,6 +55,10 @@ public extension YSPanModalPresentable where Self: UIViewController {
     
     var dragIndicatorBackgroundColor: UIColor {
         return UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1.00)
+    }
+    
+    var controllerTitle: String? {
+        return nil
     }
 
     var scrollIndicatorInsets: UIEdgeInsets {

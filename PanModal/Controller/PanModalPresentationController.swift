@@ -38,7 +38,7 @@ open class YSPanModalPresentationController: UIPresentationController {
     enum Constants {
         static let indicatorYOffset = CGFloat(8.0)
         static let snapMovementSensitivity = CGFloat(0.7)
-        static let indicatorContentHeight = CGFloat(20.0)
+        static let indicatorContentHeight = CGFloat(55.0)
         static let dragIndicatorSize = CGSize(width: 42.0, height: 5.0)
     }
 
@@ -143,6 +143,14 @@ open class YSPanModalPresentationController: UIPresentationController {
         view.backgroundColor = presentable?.dragIndicatorBackgroundColor
         view.layer.cornerRadius = Constants.dragIndicatorSize.height / 2.0
         return view
+    }()
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = presentable?.controllerTitle
+        label.textColor = UIColor(red: 0.84, green: 0.07, blue: 0.09, alpha: 1.00)
+        label.font = .boldSystemFont(ofSize: 17)
+        return label
     }()
 
     /**
@@ -310,7 +318,8 @@ private extension YSPanModalPresentationController {
 
         self.addDragIndicatorContentView(to: self.presentedView)
         
-        addDragIndicatorView(to: presentedView)
+        addDragIndicatorView(to: dragIndicatorContentView)
+        addTitleLabel(to: dragIndicatorContentView)
 
         self.setNeedsLayoutUpdate()
         self.adjustPanContainerBackgroundColor()
@@ -381,10 +390,23 @@ private extension YSPanModalPresentationController {
     func addDragIndicatorView(to view: UIView) {
         view.addSubview(dragIndicatorView)
         dragIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        dragIndicatorView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: -Constants.indicatorYOffset).isActive = true
+        dragIndicatorView.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.indicatorYOffset).isActive = true
         dragIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         dragIndicatorView.widthAnchor.constraint(equalToConstant: Constants.dragIndicatorSize.width).isActive = true
         dragIndicatorView.heightAnchor.constraint(equalToConstant: Constants.dragIndicatorSize.height).isActive = true
+    }
+    
+    /**
+     Adds the title label to the view hierarchy
+     & configures its layout constraints.
+     */
+    func addTitleLabel(to view: UIView) {
+        view.addSubview(titleLabel)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.topAnchor.constraint(equalTo: dragIndicatorView.bottomAnchor, constant: 20).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: dragIndicatorContentView.bottomAnchor).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
     }
 
     /**
