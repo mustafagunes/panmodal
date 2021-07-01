@@ -57,6 +57,10 @@ public extension YSPanModalPresentable where Self: UIViewController {
         return UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 1.00)
     }
     
+    var controllerTitleColor: UIColor {
+        return UIColor(red: 0.84, green: 0.07, blue: 0.09, alpha: 1.00)
+    }
+    
     var controllerTitle: NSAttributedString? {
         return nil
     }

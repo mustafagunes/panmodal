@@ -126,7 +126,17 @@ extension BasicViewController: YSPanModalPresentable {
     }
     
     var controllerTitle: NSAttributedString {
-        return NSAttributedString(string: "Basic")
+        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 18.0)! ]
+        let myString = NSMutableAttributedString(string: "Swift", attributes: myAttribute )
+        let attrString = NSAttributedString(string: " Attributed Strings")
+        myString.append(attrString)
+        let myRange = NSRange(location: 17, length: 7) // range starting at location 17 with a lenth of 7: "Strings"
+        myString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: myRange)
+        return myString
+    }
+    
+    var controllerTitleColor: UIColor {
+        return .white
     }
     
     var dragIndicatorCornerRadius: CGFloat {

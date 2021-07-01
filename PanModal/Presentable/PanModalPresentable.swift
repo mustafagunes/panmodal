@@ -27,6 +27,11 @@ public protocol YSPanModalPresentable: AnyObject {
     var dragIndicatorCornerRadius: CGFloat { get }
     
     /**
+     ....
+     */
+    var controllerTitleColor: UIColor { get }
+    
+    /**
      Determines the title of the opened controller.
      */
     var controllerTitle: NSAttributedString { get }
