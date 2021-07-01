@@ -17,6 +17,11 @@ public enum YSPanModalHeight: Equatable {
      Sets the height to be the maximum height (+ topOffset)
      */
     case maxHeight
+    
+    /**
+     It produces a height by taking the full-screen ratio.
+     */
+    case screenRadioHeight(CGFloat)
 
     /**
      Sets the height to be the max height with a specified top inset.

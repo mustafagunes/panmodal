@@ -20,9 +20,8 @@ import UIKit
  ```
  */
 public protocol YSPanModalPresentable: AnyObject {
-    #warning("yorum eklenecek")
     /**
-     ....
+     Determines the corner radius of the opened controller.
      */
     var dragIndicatorCornerRadius: CGFloat { get }
     
@@ -32,7 +31,7 @@ public protocol YSPanModalPresentable: AnyObject {
     var controllerTitle: NSAttributedString { get }
     
     /**
-     ....
+     Determines the title color of the opened controller.
      */
     var controllerTitleColor: UIColor { get }
     

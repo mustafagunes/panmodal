@@ -39,15 +39,15 @@ class NavigationController: UINavigationController, YSPanModalPresentable {
     // MARK: - Pan Modal Presentable
 
     var panScrollable: UIScrollView? {
-        return nil//(topViewController as? PanModalPresentable)?.panScrollable
+        return nil
     }
 
     var longFormHeight: YSPanModalHeight {
-        return .maxHeight
+        return .screenRadioHeight(0.75)
     }
 
     var shortFormHeight: YSPanModalHeight {
-        return longFormHeight
+        return .screenRadioHeight(0.75)
     }
     
     var indicatorBackgroundColor: UIColor {

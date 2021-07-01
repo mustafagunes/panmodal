@@ -13,7 +13,7 @@ import UIKit
  */
 public extension YSPanModalPresentable where Self: UIViewController {
     var topOffset: CGFloat {
-        return topLayoutOffset + 50.0
+        return topLayoutOffset + 55.0
     }
 
     var shortFormHeight: YSPanModalHeight {
