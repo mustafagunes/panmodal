@@ -20,6 +20,12 @@ import UIKit
  ```
  */
 public protocol YSPanModalPresentable: AnyObject {
+    #warning("yorum eklenecek")
+    /**
+     ....
+     */
+    var dragIndicatorCornerRadius: CGFloat { get }
+    
     /**
      Determines the title of the opened controller.
      */

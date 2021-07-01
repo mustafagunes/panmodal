@@ -57,6 +57,10 @@ class NavigationController: UINavigationController, YSPanModalPresentable {
     var controllerTitle: NSAttributedString {
         return NSAttributedString(string: "Navigation")
     }
+    
+    var dragIndicatorCornerRadius: CGFloat {
+        return 10.0
+    }
 }
 
 private class NavUserGroups: UserGroupViewController {

@@ -60,6 +60,10 @@ public extension YSPanModalPresentable where Self: UIViewController {
     var controllerTitle: NSAttributedString? {
         return nil
     }
+    
+    var dragIndicatorCornerRadius: CGFloat {
+        return 24.0
+    }
 
     var scrollIndicatorInsets: UIEdgeInsets {
         let top = self.shouldRoundTopCorners ? self.cornerRadius : 0

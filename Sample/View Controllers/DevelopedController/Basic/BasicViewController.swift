@@ -128,4 +128,8 @@ extension BasicViewController: YSPanModalPresentable {
     var controllerTitle: NSAttributedString {
         return NSAttributedString(string: "Basic")
     }
+    
+    var dragIndicatorCornerRadius: CGFloat {
+        return 6.0
+    }
 }

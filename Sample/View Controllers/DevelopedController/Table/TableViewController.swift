@@ -136,4 +136,8 @@ extension TableViewController: YSPanModalPresentable {
     var controllerTitle: NSAttributedString {
         return NSAttributedString(string: "Table")
     }
+    
+    var dragIndicatorCornerRadius: CGFloat {
+        return 16.0
+    }
 }

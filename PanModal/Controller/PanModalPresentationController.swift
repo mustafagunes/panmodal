@@ -40,6 +40,7 @@ open class YSPanModalPresentationController: UIPresentationController {
         static let snapMovementSensitivity = CGFloat(0.7)
         static let indicatorContentHeight = CGFloat(55.0)
         static let dragIndicatorSize = CGSize(width: 42.0, height: 5.0)
+        static let defaultDragCornerRadius = CGFloat(24.0)
     }
 
     // MARK: - Properties
@@ -132,6 +133,10 @@ open class YSPanModalPresentationController: UIPresentationController {
     private lazy var dragIndicatorContentView: UIView = {
         let view = UIView()
         view.backgroundColor = presentable?.indicatorBackgroundColor
+        view.roundCorners(
+            corners: [.topLeft, .topRight],
+            radius: presentable?.dragIndicatorCornerRadius ?? Constants.defaultDragCornerRadius
+        )
         return view
     }()
     
@@ -380,7 +385,6 @@ private extension YSPanModalPresentationController {
         self.dragIndicatorContentView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         self.dragIndicatorContentView.widthAnchor.constraint(equalTo: self.presentedView.widthAnchor).isActive = true
         self.dragIndicatorContentView.heightAnchor.constraint(equalToConstant: Constants.indicatorContentHeight).isActive = true
-        self.dragIndicatorContentView.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
     }
     
     /**
