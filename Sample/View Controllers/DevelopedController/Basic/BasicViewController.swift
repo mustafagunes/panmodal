@@ -125,7 +125,7 @@ extension BasicViewController: YSPanModalPresentable {
         return view.backgroundColor ?? .white
     }
     
-    var controllerTitle: NSAttributedString {
+    var controllerAttributeTitle: NSAttributedString? {
         let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 18.0)! ]
         let myString = NSMutableAttributedString(string: "Swift", attributes: myAttribute )
         let attrString = NSAttributedString(string: " Attributed Strings")

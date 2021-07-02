@@ -110,7 +110,7 @@ class StackedProfileViewController: UIViewController, YSPanModalPresentable {
         return true
     }
 
-    var controllerTitle: NSAttributedString {
+    var controllerAttributeTitle: NSAttributedString {
         return NSAttributedString(string: "StackedProfile")
     }
 }

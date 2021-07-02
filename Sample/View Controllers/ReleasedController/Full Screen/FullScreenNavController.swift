@@ -46,7 +46,7 @@ extension FullScreenNavController: YSPanModalPresentable {
         return true
     }
     
-    var controllerTitle: NSAttributedString {
+    var controllerAttributeTitle: NSAttributedString {
         return NSAttributedString(string: "FullScreenNav")
     }
 }

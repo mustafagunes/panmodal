@@ -88,7 +88,7 @@ extension YSPanModalPresentable where Self: UIViewController {
         switch from {
         case .maxHeight:
             return 0.0
-        case let .screenRadioHeight(radio):
+        case let .screenRatioHeight(radio):
             if radio.sign == .minus || radio > 1.0 {
                 fatalError("The given ratio must be a value between 0 and 1.")
             }

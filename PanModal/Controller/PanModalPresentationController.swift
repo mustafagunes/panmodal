@@ -152,7 +152,12 @@ open class YSPanModalPresentationController: UIPresentationController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.attributedText = presentable?.controllerTitle
+        if let title = presentable?.controllerTitle {
+            label.font = .boldSystemFont(ofSize: 17)
+            label.text = title
+        } else if let attributeTitlte = presentable?.controllerAttributeTitle {
+            label.attributedText = presentable?.controllerAttributeTitle
+        }
         label.textColor = presentable?.controllerTitleColor
         return label
     }()

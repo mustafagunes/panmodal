@@ -43,19 +43,19 @@ class NavigationController: UINavigationController, YSPanModalPresentable {
     }
 
     var longFormHeight: YSPanModalHeight {
-        return .screenRadioHeight(0.75)
+        return .screenRatioHeight(0.75)
     }
 
     var shortFormHeight: YSPanModalHeight {
-        return .screenRadioHeight(0.75)
+        return .screenRatioHeight(0.75)
     }
     
     var indicatorBackgroundColor: UIColor {
         return (topViewController as? YSPanModalPresentable)?.panScrollable?.backgroundColor ?? .white
     }
     
-    var controllerTitle: NSAttributedString {
-        return NSAttributedString(string: "Navigation")
+    var controllerTitle: String? {
+        return "Navigation"
     }
     
     var dragIndicatorCornerRadius: CGFloat {
