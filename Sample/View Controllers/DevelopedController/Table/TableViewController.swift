@@ -133,10 +133,6 @@ extension TableViewController: YSPanModalPresentable {
         return tableView.backgroundColor ?? .white
     }
     
-    var controllerTitle: String? {
-        return "Table"
-    }
-    
     var dragIndicatorCornerRadius: CGFloat {
         return 16.0
     }

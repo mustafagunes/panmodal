@@ -39,6 +39,7 @@ open class YSPanModalPresentationController: UIPresentationController {
         static let indicatorYOffset = CGFloat(8.0)
         static let snapMovementSensitivity = CGFloat(0.7)
         static let indicatorContentHeight = CGFloat(55.0)
+        static let notTitleIndicatorContentHeight = CGFloat(20.0)
         static let dragIndicatorSize = CGSize(width: 42.0, height: 5.0)
         static let defaultDragCornerRadius = CGFloat(24.0)
     }
@@ -99,6 +100,10 @@ open class YSPanModalPresentationController: UIPresentationController {
     private var presentable: YSPanModalPresentable? {
         return presentedViewController as? YSPanModalPresentable
     }
+    
+    private var isHaveTitle: Bool {
+        return presentable?.controllerTitle != nil || presentable?.controllerAttributeTitle != nil
+    }
 
     // MARK: - Views
 
@@ -151,6 +156,10 @@ open class YSPanModalPresentationController: UIPresentationController {
     }()
     
     private lazy var titleLabel: UILabel = {
+        if presentable?.controllerTitle != nil && presentable?.controllerAttributeTitle != nil {
+            fatalError("Only of controllerTitle or controllerAttributeTitle should be used.")
+        }
+        
         let label = UILabel()
         if let title = presentable?.controllerTitle {
             label.font = .boldSystemFont(ofSize: 17)
@@ -328,7 +337,10 @@ private extension YSPanModalPresentationController {
         self.addDragIndicatorContentView(to: self.presentedView)
         
         addDragIndicatorView(to: dragIndicatorContentView)
-        addTitleLabel(to: dragIndicatorContentView)
+        
+        if isHaveTitle {
+            addTitleLabel(to: dragIndicatorContentView)
+        }
 
         self.setNeedsLayoutUpdate()
         self.adjustPanContainerBackgroundColor()
@@ -388,7 +400,9 @@ private extension YSPanModalPresentationController {
         self.dragIndicatorContentView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 1.0).isActive = true
         self.dragIndicatorContentView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         self.dragIndicatorContentView.widthAnchor.constraint(equalTo: self.presentedView.widthAnchor).isActive = true
-        self.dragIndicatorContentView.heightAnchor.constraint(equalToConstant: Constants.indicatorContentHeight).isActive = true
+        
+        let contentViewHeight = isHaveTitle ? Constants.indicatorContentHeight : Constants.notTitleIndicatorContentHeight
+        self.dragIndicatorContentView.heightAnchor.constraint(equalToConstant: contentViewHeight).isActive = true
     }
     
     /**
