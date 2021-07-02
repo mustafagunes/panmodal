@@ -138,8 +138,4 @@ extension BasicViewController: YSPanModalPresentable {
     var controllerTitleColor: UIColor {
         return .white
     }
-    
-    var dragIndicatorCornerRadius: CGFloat {
-        return 6.0
-    }
 }

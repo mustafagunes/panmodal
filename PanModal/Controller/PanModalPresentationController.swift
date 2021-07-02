@@ -334,8 +334,7 @@ private extension YSPanModalPresentationController {
         containerView.addSubview(self.presentedView)
         containerView.addGestureRecognizer(self.panGestureRecognizer)
 
-        self.addDragIndicatorContentView(to: self.presentedView)
-        
+        addDragIndicatorContentView(to: self.presentedView)
         addDragIndicatorView(to: dragIndicatorContentView)
         
         if isHaveTitle {
