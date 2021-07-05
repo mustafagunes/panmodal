@@ -69,10 +69,6 @@ public extension YSPanModalPresentable where Self: UIViewController {
         return nil
     }
     
-    private var isHaveTitle: Bool {
-        return controllerTitle != nil || controllerAttributeTitle != nil
-    }
-    
     var dragIndicatorCornerRadius: CGFloat {
         return (controllerTitle != nil || controllerAttributeTitle != nil) ? 24.0 : 12.0
     }
